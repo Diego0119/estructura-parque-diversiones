@@ -4,7 +4,7 @@ class Parque:
         self.juegos = juegos
 
     def consultar_juegos_activos(self):
+        pass
 
     def cobrar_ticker(self,visitante,atraccion):
-
-        
+        pass
