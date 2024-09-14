@@ -17,7 +17,6 @@ class Atraccion:
                 print("No hay suficientes visitantes en la cola")
 
 
-
     def comenzar_mantenimiento(self):
         self.estado = "fuera de servicio"
         print(f"La atracción {self.nombre} está ahora en mantenimiento.")
