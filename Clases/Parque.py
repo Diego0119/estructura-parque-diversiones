@@ -36,15 +36,15 @@ class Parque:
             print(f"Ahora mismo no hay juegos activos en {self.nombre}")
         
 
-    def cobrar_ticket(self,visitante,atraccion):
-        if visitante.dinero >= atraccion.precio:
-            visitante.dinero -=atraccion.precio
-            self.contador_tickets+=1;
-            #Ticket.ventas.append(atraccion.precio)
-            ticket = Ticket(self.contador_tickets,atraccion.nombre,atraccion.precio, "Fecha")
-            visitante.tickets.append(ticket)
-            self.contador_tickets+=1;
-            print(f"Ticket para {atraccion.nombre} vendido a {visitante.nombre}.")
-        else:
-            print(f"{visitante.nombre} no tiene suficiente dinero para subirse a {atraccion.nombre}")
- 
+    def cobrar_ticket(self, visitante, atraccion):
+        ticket_encontrado = False
+
+        for ticket in visitante.tickets:
+            if ticket.atraccion == atraccion.nombre:
+                ticket_encontrado = True
+                visitante.tickets.remove(ticket) 
+                print(f"Ticket para {atraccion.nombre} cobrado a {visitante.nombre}.")
+                break
+        
+        if not ticket_encontrado:
+            print(f"{visitante.nombre} no tiene un ticket válido para {atraccion.nombre}.")

@@ -19,7 +19,7 @@ class Visitante:
         else:
             print(f"{self.nombre} no tiene suficiente dinero para comprar un ticket de {atraccion.nombre}")
 
-
+   # implementar este metodo cuando se "cobre el ticket" 
     def entregar_ticket(self,atraccion):
         for ticket in self.tickets:
             if ticket.atraccion.nombre == atraccion.nombre:

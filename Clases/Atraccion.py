@@ -28,6 +28,3 @@ class Atraccion:
 
     def verificar_restricciones(self,visitante):
         print(f"{self.nombre} no tiene restricciones, por lo que {visitante.nombre} ha logrado subirse")
-
-    # def definir_juego(self):
-    #     parque.juegos.append(self.nombre)

@@ -13,6 +13,7 @@ visitante_3 = Visitante("Carla", 20, 165, 18000)
 visitante_4 = Visitante("Sofia", 20, 165, 18000)
 visitante_5 = Visitante("Humberto", 20, 165, 18000)
 visitante_6 = Visitante("Jose", 20, 165, 18000)
+visitante_7 = Visitante("Matilda", 9, 130,5000)
 visitante_vip = VisitanteVIP("Carlos", 25, 180, 30000)
 
 # atracciones
@@ -33,14 +34,18 @@ visitante_3.comprar_ticket(atraccion_1,parque)
 visitante_4.comprar_ticket(montana_rusa,parque)
 visitante_5.comprar_ticket(atraccion_1,parque)
 visitante_6.comprar_ticket(montana_rusa,parque)
+visitante_7.comprar_ticket(atraccion_infantil,parque)
 visitante_vip.comprar_ticket(montana_rusa,parque)
-# parque.cobrar_ticket(visitante_1, atraccion_infantil)
-# parque.cobrar_ticket(visitante_2, montana_rusa)
-# parque.cobrar_ticket(visitante_vip, montana_rusa)
-# parque.cobrar_ticket(visitante_3, atraccion_1)
-# parque.cobrar_ticket(visitante_4, montana_rusa)
-# parque.cobrar_ticket(visitante_5, atraccion_1)
-# parque.cobrar_ticket(visitante_6, montana_rusa)
+
+print("\nCobrar tickets para que se puedan subir:")
+parque.cobrar_ticket(visitante_1, atraccion_infantil)
+parque.cobrar_ticket(visitante_2, montana_rusa)
+parque.cobrar_ticket(visitante_vip, montana_rusa)
+parque.cobrar_ticket(visitante_3, atraccion_1)
+parque.cobrar_ticket(visitante_4, montana_rusa)
+parque.cobrar_ticket(visitante_5, atraccion_1)
+parque.cobrar_ticket(visitante_6, montana_rusa)
+parque.cobrar_ticket(visitante_7,atraccion_infantil)
 
 # # visitantes haciendo cola
 print("\nVisitantes en la cola:")
@@ -51,11 +56,13 @@ visitante_3.hacer_cola(atraccion_1)
 visitante_4.hacer_cola(montana_rusa)
 visitante_5.hacer_cola(atraccion_1)
 visitante_6.hacer_cola(montana_rusa)
+visitante_7.hacer_cola(atraccion_infantil)
 
 # ronda de atracciones
 print("\nIniciar Rondas:")
 atraccion_1.iniciar_ronda()
 montana_rusa.iniciar_ronda()
+atraccion_infantil.iniciar_ronda()
 
 # mantenimiento
 print("\nMantenimiento:")
