@@ -3,7 +3,7 @@ from Clases.Ticket import Ticket
 class Parque:
     def __init__(self,nombre,juegos):
         self.nombre = nombre
-        self.juegos = []
+        self.juegos = juegos
         self.contador_tickets = 0;
         self.ventas = []
 
@@ -31,7 +31,7 @@ class Parque:
         if len(self.juegos) > 0:
             print(f"Los juegos activos en el parque {self.nombre} son: ")
             for juego in self.juegos:
-                print(f"{juego}")
+                print(f"{juego.nombre}")
         else:
             print(f"Ahora mismo no hay juegos activos en {self.nombre}")
         

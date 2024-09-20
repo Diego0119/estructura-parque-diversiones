@@ -7,6 +7,7 @@ class AtraccionInfantil(Atraccion):
     def verificar_restricciones(self, visitante):
         if visitante.edad <= 10:
             print(f"{visitante.nombre} puede acceder a la atracción infantil {self.nombre}.")
+            return True
         else:
             print(f"{visitante.nombre} no cumple con las restricciones de edad para la atracción infantil {self.nombre}.")
-            
+            return False

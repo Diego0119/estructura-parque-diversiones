@@ -8,6 +8,7 @@ class Visitante:
         self.dinero = dinero
         self.tickets = []
         self.cola  = []
+        self.es_vip = False
 
     def comprar_ticket(self, atraccion,parque):
         if self.dinero >= atraccion.precio:
@@ -22,9 +23,9 @@ class Visitante:
    # implementar este metodo cuando se "cobre el ticket" 
     def entregar_ticket(self,atraccion):
         for ticket in self.tickets:
-            if ticket.atraccion.nombre == atraccion.nombre:
+            if ticket.atraccion == atraccion.nombre:
                 self.tickets.remove(ticket)
-                printf(f"{self.nombre} entrego el ticket para la atraccion {ticket.atraccion}")
+                print(f"{self.nombre} entrego el ticket para la atraccion {ticket.atraccion}")
                 return
         print(f"{self.nombre} no tiene un ticket para la atraccion {ticket.atraccion}")
 
@@ -32,7 +33,7 @@ class Visitante:
     def hacer_cola(self, atraccion):
         cumple_restricciones = atraccion.verificar_restricciones(self)
         
-        if not cumple_restricciones:
+        if cumple_restricciones is False:
             print(f"{self.nombre} no puede acceder a la atracción {atraccion.nombre}.")
             return
     
@@ -44,3 +45,7 @@ class Visitante:
                 print(f"{self.nombre} ya está en la cola de {atraccion.nombre}.")
         else:
             print(f"La atracción {atraccion.nombre} no está activa.")
+
+
+    def es_vip(self):
+        return self.es_vip
